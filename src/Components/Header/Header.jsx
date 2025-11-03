@@ -1,0 +1,128 @@
+import React, { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router";
+import {
+  FaSearch,
+  FaHeart,
+  FaShoppingCart,
+  FaUser,
+  FaExchangeAlt,
+} from "react-icons/fa";
+import { GiMilkCarton, GiFruitBowl, GiChickenOven, GiBread } from "react-icons/gi";
+import { MdLocalDrink } from "react-icons/md";
+import { IoIosShirt } from "react-icons/io";
+import { FaCarrot, FaDrumstickBite } from "react-icons/fa";
+import { FaHeadset } from "react-icons/fa";
+
+const categories = [
+  { name: "Milks and Dairies", icon: <GiMilkCarton /> },
+  { name: "Wines & Drinks", icon: <MdLocalDrink /> },
+  { name: "Clothing & Beauty", icon: <IoIosShirt /> },
+  { name: "Fresh Seafood", icon: <GiChickenOven /> },
+  { name: "Pet Foods & Toy", icon: <FaDrumstickBite /> },
+  { name: "Fast food", icon: <FaCarrot /> },
+  { name: "Baking material", icon: <GiBread /> },
+  { name: "Vegetables", icon: <FaCarrot /> },
+  { name: "Fresh Fruit", icon: <GiFruitBowl /> },
+  { name: "Bread and Juice", icon: <GiBread /> },
+];
+
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Products", path: "/products" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
+  { name: "FAQ", path: "/faq" },
+];
+
+const Header = () => {
+  const [showCategories, setShowCategories] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setShowCategories(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div className="bg-white border-b shadow-sm py-3 relative">
+      <div className="container mx-auto px-6 flex items-center justify-between">
+        {/* Logo + NavLinks */}
+         <div className="relative" ref={dropdownRef}>
+          <button
+            onClick={() => setShowCategories(!showCategories)}
+            className="flex items-center gap-2 px-4 py-2 bg-[#29a56c] text-white rounded-md hover:bg-green-600 transition-all"
+          >
+            <span className="text-lg font-medium">Browse Categories</span>
+            <span className="text-xl">{showCategories ? "▲" : "▼"}</span>
+          </button>
+
+          {showCategories && (
+            <div className="absolute left-0 top-full mt-2 bg-white border shadow-lg rounded-md w-[600px] p-4 z-50">
+              <div className="grid grid-cols-2 gap-4">
+                {categories.map((cat, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 p-3 border rounded-md hover:bg-gray-50 cursor-pointer"
+                  >
+                    <div className="text-2xl text-[#29a56c]">{cat.icon}</div>
+                    <span className="text-sm font-medium">{cat.name}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 text-center">
+                <button className="flex items-center gap-2 text-[#29a56c] hover:underline mx-auto">
+                  <span className="text-lg font-bold">+</span> Show more...
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Categories Dropdown */}
+       <div className="flex items-center gap-6">
+          <div className="text-2xl font-bold text-green-600">Logo</div>
+          <div className="hidden md:flex gap-4">
+            {navLinks.map((link, i) => (
+              <NavLink
+                key={i}
+                to={link.path}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#29a56c] font-semibold"
+                    : "text-gray-700 hover:text-[#29a56c] transition-colors"
+                }
+              >
+                {link.name}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Icons */}
+         <div className="flex items-center gap-4 p-4 border rounded-md">
+      {/* Icon div */}
+      <div>
+        <FaHeadset className="text-3xl text-green-600" />
+      </div>
+
+      {/* Text div */}
+      <div className="flex flex-col">
+        <p className="text-sm font-medium">Call Us</p>
+        <p className="text-xs text-gray-500">+123 456 7890</p>
+      </div>
+    </div>
+        
+      </div>
+    </div>
+  );
+};
+
+export default Header;
