@@ -1,13 +1,15 @@
 
 import './index.css'
-import React from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router/dom";
+import { RouterProvider } from "react-router";
 import Root from './Root/Root';
 import Page from './Pages/Page';
 import Contact from './Components/Contact/Contact';
 import About from './Components/About/About';
+
+import ProductDetails from './Pages/ProductDetails';
 
 const router = createBrowserRouter([
   {
@@ -22,9 +24,18 @@ const router = createBrowserRouter([
        path:'/contact',
        element:<Contact></Contact>, 
       },
+       {
+       path:'/products',
+       element:<h1>hi</h1>, 
+      },
+      
       {
        path:'/about',
        element:<About></About>, 
+      },
+      {
+       path:'/product/:id',
+       element:<ProductDetails></ProductDetails>, 
       },
     ]
   },
@@ -33,7 +44,10 @@ const router = createBrowserRouter([
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
-  <RouterProvider router={router} />,
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>
+  
 );
 
 

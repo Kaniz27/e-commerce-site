@@ -1,17 +1,23 @@
 import React, { useState, useRef, useEffect } from "react";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router"; 
 import {
   FaSearch,
   FaHeart,
   FaShoppingCart,
   FaUser,
   FaExchangeAlt,
+  FaCarrot,
+  FaDrumstickBite,
+  FaHeadset,
 } from "react-icons/fa";
-import { GiMilkCarton, GiFruitBowl, GiChickenOven, GiBread } from "react-icons/gi";
+import {
+  GiMilkCarton,
+  GiFruitBowl,
+  GiChickenOven,
+  GiBread,
+} from "react-icons/gi";
 import { MdLocalDrink } from "react-icons/md";
 import { IoIosShirt } from "react-icons/io";
-import { FaCarrot, FaDrumstickBite } from "react-icons/fa";
-import { FaHeadset } from "react-icons/fa";
 
 const categories = [
   { name: "Milks and Dairies", icon: <GiMilkCarton /> },
@@ -40,7 +46,7 @@ const Header = () => {
   const [showCategories, setShowCategories] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Close dropdown on outside click
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -52,10 +58,10 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="bg-white border-b shadow-sm py-3 relative">
+    <header className="bg-white border-b shadow-sm py-3 relative z-50">
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo + NavLinks */}
-         <div className="relative" ref={dropdownRef}>
+        {/* Categories Dropdown */}
+        <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setShowCategories(!showCategories)}
             className="flex items-center gap-2 px-4 py-2 bg-[#29a56c] text-white rounded-md hover:bg-green-600 transition-all"
@@ -86,10 +92,11 @@ const Header = () => {
           )}
         </div>
 
-        {/* Categories Dropdown */}
-       <div className="flex items-center gap-6">
+        {/* Logo + Navigation */}
+        <div className="flex items-center gap-6">
           <div className="text-2xl font-bold text-green-600">Logo</div>
-          <div className="hidden md:flex gap-4">
+
+          <nav className="hidden md:flex gap-4">
             {navLinks.map((link, i) => (
               <NavLink
                 key={i}
@@ -103,25 +110,19 @@ const Header = () => {
                 {link.name}
               </NavLink>
             ))}
-          </div>
+          </nav>
         </div>
 
-        {/* Right Icons */}
-         <div className="flex items-center gap-4 p-4 border rounded-md">
-      {/* Icon div */}
-      <div>
-        <FaHeadset className="text-3xl text-green-600" />
+        {/* Contact / Right Icons */}
+        <div className="flex items-center gap-4 p-4 border rounded-md">
+          <FaHeadset className="text-3xl text-green-600" />
+          <div className="flex flex-col">
+            <p className="text-sm font-medium">Call Us</p>
+            <p className="text-xs text-gray-500">+123 456 7890</p>
+          </div>
+        </div>
       </div>
-
-      {/* Text div */}
-      <div className="flex flex-col">
-        <p className="text-sm font-medium">Call Us</p>
-        <p className="text-xs text-gray-500">+123 456 7890</p>
-      </div>
-    </div>
-        
-      </div>
-    </div>
+    </header>
   );
 };
 

@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "name": "Chocolate Cake",
+    "category": "Cake & Milk",
+    "image": "https://images.unsplash.com/photo-1608198093002-de6b0b2b39af"
+  },
+  {
+    "id": 2,
+    "name": "Fresh Cream Cake",
+    "category": "Cake & Milk",
+    "image": "https://images.unsplash.com/photo-1599785209798-9d7a989b45b2"
+  },
+  {
+    "id": 3,
+    "name": "Vanilla Milk",
+    "category": "Cake & Milk",
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+  },
+  {
+    "id": 4,
+    "name": "Cappuccino Coffee",
+    "category": "Coffes & Teas",
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+  },
+  {
+    "id": 5,
+    "name": "Green Tea",
+    "category": "Coffes & Teas",
+    "image": "https://images.unsplash.com/photo-1510626176961-4b37d0f0b12d"
+  },
+  {
+    "id": 6,
+    "name": "Latte Coffee",
+    "category": "Coffes & Teas",
+    "image": "https://images.unsplash.com/photo-1554118811-1e0d58224f24"
+  },
+  {
+    "id": 7,
+    "name": "Cat Food",
+    "category": "Pet Foods",
+    "image": "https://images.unsplash.com/photo-1598136490941-1b13a4f7c9a3"
+  },
+  {
+    "id": 8,
+    "name": "Dog Kibble",
+    "category": "Pet Foods",
+    "image": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e"
+  },
+  {
+    "id": 9,
+    "name": "Bird Seeds",
+    "category": "Pet Foods",
+    "image": "https://images.unsplash.com/photo-1620306549897-f282fba210b1"
+  },
+  {
+    "id": 10,
+    "name": "Fresh Tomato",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": 11,
+    "name": "Organic Carrot",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1582515073490-dc38eec2d7c1"
+  },
+  {
+    "id": 12,
+    "name": "Green Broccoli",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1584270354949-1f3b9a8aa8a9"
+  },
+  {
+    "id": 13,
+    "name": "Spinach Leaf",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": 14,
+    "name": "Muffin Cake",
+    "category": "Cake & Milk",
+    "image": "https://images.unsplash.com/photo-1589308078056-fc6de9b6a4f4"
+  }
+  
+]
