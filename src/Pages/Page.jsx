@@ -22,6 +22,7 @@ const Page = () => {
            <CategoryProducts></CategoryProducts>
            <Contact2></Contact2>
           
+          
         </div>
     );
 };

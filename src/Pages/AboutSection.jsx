@@ -25,7 +25,7 @@ const AboutSection = () => {
         {aboutItems.map((item, index) => (
           <div
             key={index}
-            className="flex-1 min-w-[250px] bg-white p-6 rounded-lg shadow hover:shadow-lg transition-all"
+            className="flex-1 min-w-[250px] bg-white p-6 rounded-lg  "
           >
             <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
             <p className="text-gray-600">{item.description}</p>

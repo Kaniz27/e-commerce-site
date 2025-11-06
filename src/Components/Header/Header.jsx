@@ -93,10 +93,10 @@ const Header = () => {
         </div>
 
         {/* Logo + Navigation */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center ">
          
 
-          <nav className="hidden md:flex gap-4">
+          <nav className="hidden md:flex gap-12">
             {navLinks.map((link, i) => (
               <NavLink
                 key={i}
