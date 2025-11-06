@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaSearch, FaHeart, FaShoppingCart, FaUser, FaExchangeAlt } from "react-icons/fa";
+import { FaSearch, FaHeart, FaShoppingCart, FaUser,  } from "react-icons/fa";
+import { IoIosGitCompare } from "react-icons/io";
 
 const TopHeader = () => {
   const [showCategories, setShowCategories] = useState(false);
@@ -25,13 +26,13 @@ const TopHeader = () => {
   }, []);
 
   return (
-    <div className="bg-white border-b shadow-sm py-3">
+    <div className="bg-white border-b border-b-gray-200 shadow-sm py-3">
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* -------- Left: Logo -------- */}
+        
         <div className="flex items-center gap-2">
           <div>
-            <h2 className="text-2xl font-bold text-[#29a56c] leading-none">Nest</h2>
-            <p className="text-xs text-gray-500 tracking-widest">MART & GROCERY</p>
+           <img src="https://nest-frontend-v6.netlify.app/assets/imgs/theme/logo.svg" alt="" />
           </div>
         </div>
 
@@ -78,19 +79,19 @@ const TopHeader = () => {
           {/* Compare */}
           <div className="relative hover:text-[#29a56c] cursor-pointer flex items-center gap-1 text-sm">
             <span className="relative">
-              <FaExchangeAlt className="text-xl" />
+              <IoIosGitCompare className="text-xl" />
               <span className="absolute -top-2 -right-2 bg-[#29a56c] text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">3</span>
             </span>
-            <span>Compare</span>
+            <span className="text-[18px]">Compare</span>
           </div>
 
           {/* Wishlist */}
-          <div className="relative hover:text-[#29a56c] cursor-pointer flex items-center gap-1 text-sm">
+          <div className="relative hover:text-[#29a56c] cursor-pointer flex items-center gap-1 text-[18px]">
             <span className="relative">
               <FaHeart className="text-xl" />
               <span className="absolute -top-2 -right-2 bg-[#29a56c] text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">6</span>
             </span>
-            <span>Wishlist</span>
+            <span className="text-[18px]">Wishlist</span>
           </div>
 
           {/* Cart */}
@@ -99,13 +100,13 @@ const TopHeader = () => {
               <FaShoppingCart className="text-xl" />
               <span className="absolute -top-2 -right-2 bg-[#29a56c] text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">2</span>
             </span>
-            <span>Cart</span>
+            <span className="text-[18px]">Cart</span>
           </div>
 
           {/* Account */}
           <div className="hover:text-[#29a56c] cursor-pointer flex items-center gap-1 text-sm">
             <FaUser className="text-xl" />
-            <span>Account</span>
+            <span className="text-[18px]">Account</span>
           </div>
         </div>
       </div>

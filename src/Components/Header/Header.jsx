@@ -35,11 +35,11 @@ const categories = [
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Services", path: "/services" },
-  { name: "Products", path: "/products" },
+  { name: "Shop", path: "/shop" },
+  { name: "Vendor", path: "/vendor" },
   { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
-  { name: "FAQ", path: "/faq" },
+  { name: "Page", path: "/page" },
 ];
 
 const Header = () => {
@@ -58,7 +58,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-white border-b shadow-sm py-3 relative z-50">
+    <header className="bg-white border-b border-b-gray-200 shadow-sm py-3 relative z-50">
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Categories Dropdown */}
         <div className="relative" ref={dropdownRef}>
@@ -94,7 +94,7 @@ const Header = () => {
 
         {/* Logo + Navigation */}
         <div className="flex items-center gap-6">
-          <div className="text-2xl font-bold text-green-600">Logo</div>
+         
 
           <nav className="hidden md:flex gap-4">
             {navLinks.map((link, i) => (
@@ -114,11 +114,11 @@ const Header = () => {
         </div>
 
         {/* Contact / Right Icons */}
-        <div className="flex items-center gap-4 p-4 border rounded-md">
+        <div className="flex items-center gap-4 p-4  rounded-md">
           <FaHeadset className="text-3xl text-green-600" />
           <div className="flex flex-col">
-            <p className="text-sm font-medium">Call Us</p>
-            <p className="text-xs text-gray-500">+123 456 7890</p>
+            <p className="text-xl font-bold text-[#29a56c]">1900 -<br></br> 888</p>
+            <p className="text-xs text-gray-500">24/7 Support Center</p>
           </div>
         </div>
       </div>

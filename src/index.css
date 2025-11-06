@@ -14,3 +14,6 @@
 .animate-slideDown {
   animation: slideDown 0.25s ease-out forwards;
 }
+*{
+   font-family: "Poppins", sans-serif;
+}
