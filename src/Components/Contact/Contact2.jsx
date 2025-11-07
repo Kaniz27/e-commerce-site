@@ -53,7 +53,7 @@ const Contact2 = () => {
             placeholder="Search for products..."
             className="flex-1 p-3 text-gray-700 focus:outline-none"
           />
-          <button className="bg-green-600 px-4 py-3 text-white hover:bg-green-700 transition-colors">
+          <button className="bg-green-600 rounded-full px-4 py-3 text-white hover:bg-green-700 transition-colors">
             <FaSearch />
           </button>
         </div>

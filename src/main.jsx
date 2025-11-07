@@ -11,6 +11,9 @@ import About from './Components/About/About';
 
 import ProductDetails from './Pages/ProductDetails';
 import ProductDetails2 from './Pages/ProductDetails2';
+import PopularCard from './Pages/popularCard';
+import ShopHero from './Pages/ShopHero';
+import Vendor from './Pages/Vendor';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +32,22 @@ const router = createBrowserRouter([
        path:'/products',
        element:<h1>hi</h1>, 
       },
-      
+      {
+       path:'/shop',
+       element:<ShopHero></ShopHero>, 
+      },
+      {
+       path:'/page',
+       element:<ShopHero></ShopHero>, 
+      },
+      {
+       path:'/vendor',
+       element:<Vendor></Vendor>, 
+      },
+      {
+       path:'/blog',
+       element:<ShopHero></ShopHero>, 
+      },
       {
        path:'/about',
        element:<About></About>, 
@@ -41,6 +59,10 @@ const router = createBrowserRouter([
       {
        path:'/products/:id',
        element:<ProductDetails2></ProductDetails2>, 
+      },
+      {
+       path:'/category/:id',
+       element:<PopularCard></PopularCard>, 
       },
     ]
   },

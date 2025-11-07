@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const FeaturedCategories = () => {
   const [products, setProducts] = useState([]);
   const scrollRef = useRef(null);
+   const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/featurecategory.json")
@@ -23,9 +25,13 @@ const FeaturedCategories = () => {
       container.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
+   const handleCardClick = (item) => {
+    // dynamic route: /category/:id
+    navigate(`/category/${item.id}`, { state: { item } });
+  };
 
   return (
-    <div className=" px-6 md:px-16 py-20 relative">
+    <div className=" px-6 md:px-16 pb-20 pt-10 relative">
       <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-gray-800 text-center">
         Featured Categories
       </h2>
@@ -54,6 +60,7 @@ const FeaturedCategories = () => {
         {products.map((item) => (
           <div
             key={item.id}
+            onClick={() => handleCardClick(item)}
             className="min-w-[140px] bg-white shadow rounded-lg p-3 flex flex-col items-center justify-center
                        transition-transform duration-300 ease-in-out cursor-pointer
                        hover:-translate-y-2 hover:shadow-md"
