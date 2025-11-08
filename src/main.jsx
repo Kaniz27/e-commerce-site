@@ -14,6 +14,7 @@ import ProductDetails2 from './Pages/ProductDetails2';
 import PopularCard from './Pages/popularCard';
 import ShopHero from './Pages/ShopHero';
 import Vendor from './Pages/Vendor';
+import ProductGrid from '../ProductGrid';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
        path:'/category/:id',
        element:<PopularCard></PopularCard>, 
+      },
+      {
+       path:'/shop/:category',
+       element:<ProductGrid></ProductGrid>, 
       },
     ]
   },

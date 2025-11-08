@@ -12,11 +12,13 @@ const ShopHero = () => {
   return (
     <div>
       <div
-        className="h-[80vh] w-full bg-cover bg-center bg-no-repeat rounded-2xl relative flex items-center px-6  md:px-20 overflow-hidden m-5"
-        style={{
-          backgroundImage: `url('https://assets.hub.com.sa/images/Banner/c4fef91b-0538-4fea-b5d5-51dff0579157.png')`,
-        }}
-      >
+  className="relative z-0 h-[80vh] bg-cover rounded-xl bg-center flex items-center px-6 md:px-20"
+  style={{
+    backgroundImage:
+      "url('https://assets.hub.com.sa/images/Banner/c4fef91b-0538-4fea-b5d5-51dff0579157.png')",
+  }}
+>
+
         {/* Overlay for better text visibility */}
         <div className="absolute inset-0 bg-black opacity-30"></div>
 

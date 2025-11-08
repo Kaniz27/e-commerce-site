@@ -117,7 +117,7 @@ const Header = () => {
         <div className="flex items-center gap-4 p-4  rounded-md">
           <FaHeadset className="text-3xl text-green-600" />
           <div className="flex flex-col">
-            <p className="text-xl font-bold text-[#29a56c]">1900 -<br></br> 888</p>
+            <p className="text-xl font-bold text-[#29a56c]">1900 - 888</p>
             <p className="text-xs text-gray-500">24/7 Support Center</p>
           </div>
         </div>
